@@ -1,0 +1,9 @@
+<p>lobby works!</p>
+<nav class="pb-4">
+    <a routerLink="/rental">Rental</a>
+    <a routerLink="/registration" style="padding-left: 10px;">Registration</a>
+    <a routerLink="/registration2" style="padding-left: 10px;">Registration2</a>
+    <a routerLink="/griderTemplateForm" style="padding-left: 10px;">GriderTemplateForm</a>
+</nav>
+
+<p *ngFor="let user of users" >{{user.name}} <span>{{ user.id }}</span></p>

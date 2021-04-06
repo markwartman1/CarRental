@@ -1,0 +1,28 @@
+<p>grider-templet-form works!</p>
+
+<form (ngSubmit)="onClick(f)" #f="ngForm">
+    <!-- email or pattern -->
+    <input type="email" pattern=".+@.+\..+" required name="email" [(ngModel)]="email" #emailControl="ngModel" />
+
+    <!-- f.controls.email.invalid -->
+    <ng-container *ngIf="emailControl.invalid && emailControl.touched">
+        <div *ngIf="emailControl.errors.required">
+            You must enter an email
+        </div>
+        <div *ngIf="emailControl.errors.pattern">
+            You must enter a valid email
+        </div>
+    </ng-container>
+    <button [disabled]="f.invalid" class="btn btn-primary" >Submit</button>
+</form>
+
+    <hr>
+    <div>
+       Is form valid: {{ f.valid }}
+    </div>
+    <div>
+        Form Values: {{ f.value | json }}
+    </div>
+    <div>
+        Email validation error: {{ f.controls.email.errors | json }}
+    </div>
