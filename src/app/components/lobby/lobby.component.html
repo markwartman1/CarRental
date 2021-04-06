@@ -1,9 +1,28 @@
 <p>lobby works!</p>
-<nav class="pb-4">
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/rental">Rental</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="/lobby/registration">Registration</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/registration2">Registration2</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/griderTemplateForm">GriderTemplateForm</a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>
+
+<!-- <nav class="pb-4">
     <a routerLink="/rental">Rental</a>
     <a routerLink="/registration" style="padding-left: 10px;">Registration</a>
     <a routerLink="/registration2" style="padding-left: 10px;">Registration2</a>
     <a routerLink="/griderTemplateForm" style="padding-left: 10px;">GriderTemplateForm</a>
-</nav>
+</nav> -->
 
-<p *ngFor="let user of users" >{{user.name}} <span>{{ user.id }}</span></p>
+<!-- <p *ngFor="let user of users" >{{user.name}} <span>{{ user.id }}</span></p> -->

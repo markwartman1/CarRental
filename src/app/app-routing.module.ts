@@ -11,7 +11,7 @@ import { GriderTempletFormComponent } from './components/lobby/grider-templet-fo
 const routes: Routes = [
   { path: 'lobby', component: LobbyComponent },
   { path: 'carLot', component: CarLotComponent },
-  { path: 'registration', component: RegistrationComponent },
+  { path: 'lobby/registration', component: RegistrationComponent },
   { path: 'rental', component: RentalComponent },
   { path: 'registration2', component: Registration2Component },
   { path: 'griderTemplateForm', component: GriderTempletFormComponent },
