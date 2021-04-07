@@ -6,6 +6,7 @@ import { RegistrationComponent } from './components/lobby/registration/registrat
 import { RentalComponent } from './components/lobby/rental/rental.component';
 import { Registration2Component } from './components/lobby/registration2/registration2.component';
 import { GriderTempletFormComponent } from './components/lobby/grider-templet-form/grider-templet-form.component';
+import { UserRosterComponent } from './components/user-roster/user-roster.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'rental', component: RentalComponent },
   { path: 'lobby/registration2', component: Registration2Component },
   { path: 'griderTemplateForm', component: GriderTempletFormComponent },
+  { path: 'users', component: UserRosterComponent }
 ];
 
 @NgModule({
