@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'carLot', component: CarLotComponent },
   { path: 'lobby/registration', component: RegistrationComponent },
   { path: 'rental', component: RentalComponent },
-  { path: 'registration2', component: Registration2Component },
+  { path: 'lobby/registration2', component: Registration2Component },
   { path: 'griderTemplateForm', component: GriderTempletFormComponent },
 ];
 
