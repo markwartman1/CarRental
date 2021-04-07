@@ -10,6 +10,7 @@ import { UserService } from "../../Services/user.service";
 export class LobbyComponent implements OnInit {
 
   users: Users[];
+  isSomething: boolean = true; // disables a little nav link
 
   constructor(
     private us: UserService
