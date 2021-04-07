@@ -16,6 +16,7 @@ import { RentalComponent } from './components/lobby/rental/rental.component';
 import { Registration2Component } from './components/lobby/registration2/registration2.component';
 import { GriderTempletFormComponent } from './components/lobby/grider-templet-form/grider-templet-form.component';
 import { UserRosterComponent } from './components/user-roster/user-roster.component';
+import { EditUserComponent } from './components/user-roster/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserRosterComponent } from './components/user-roster/user-roster.compon
     RentalComponent,
     Registration2Component,
     GriderTempletFormComponent,
-    UserRosterComponent
+    UserRosterComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

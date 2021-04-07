@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Users } from "../../Models/Users";
 import { UserService } from "../../Services/user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-user-roster',
@@ -13,7 +14,9 @@ export class UserRosterComponent implements OnInit, OnDestroy {
   sub: Subscription;
   users: Users[];
 
-  constructor( private us : UserService) { }
+  constructor( 
+    private us : UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -24,7 +27,7 @@ export class UserRosterComponent implements OnInit, OnDestroy {
 
   onClickEditBio(id: number) {
     console.log("id: " + id);
-    
+    this.router.navigate(['users/edit-user']);
   }
 
   ngOnDestroy() {
