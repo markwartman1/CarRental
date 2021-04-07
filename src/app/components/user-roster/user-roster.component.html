@@ -1,3 +1,7 @@
 <p>user-roster works!</p>
 
-<div *ngFor="let user of users" >{{user.name}} <span>{{ user.id }}</span></div>
+<div *ngFor="let user of users" >
+    <p (click)="onClickEditBio(user.id)" style="cursor: pointer;">
+        {{user.name}} <span>{{ user.id }}</span>
+    </p>
+</div>
