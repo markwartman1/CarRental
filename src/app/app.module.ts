@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { AppRoutingModule } from './app-routing.module';
+import { GarageModule } from "./garage/garage.module";
+
 import { InMemoryDataService } from './Services/in-memory-data.service';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LobbyComponent } from './components/lobby/lobby.component';
 import { RegistrationComponent } from './components/lobby/registration/registration.component';
@@ -36,7 +38,8 @@ import { GriderTempletFormComponent } from './components/lobby/grider-templet-fo
       InMemoryDataService, { dataEncapsulation: false }
     ),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    GarageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
