@@ -25,13 +25,15 @@ export class UserRosterComponent implements OnInit, OnDestroy {
     });
   }
 
-  onClickEditBio(id: number) {
-    console.log("id: " + id);
+  onClickEditBio(userId: number) {
+    //console.log("id: " + id);
+    //this.us.selectedUser.next(user);
+    this.us.setUser(userId);
     this.router.navigate(['users/edit-user']);
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    //this.sub.unsubscribe();
   }
 
 }

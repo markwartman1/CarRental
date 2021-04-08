@@ -18,11 +18,11 @@ export class LobbyComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getUsers();
+    //this.getUsers();
   }
 
-  getUsers() {
-    this.us.getUsers().subscribe(users => this.users = users);
-  }
+  // getUsers() {
+  //   this.us.getUsers().subscribe(users => this.users = users);
+  // }
 
 }
