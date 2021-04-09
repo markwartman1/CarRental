@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MessageService } from '../service/message.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  message: string = "default";
+  subscription: Subscription;
+
+  constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
+
+    this.subscription = this.messageService.message.subscribe(mess => this.message = mess);
   }
 
 }
