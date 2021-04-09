@@ -8,21 +8,20 @@ import { UserService } from "src/app/Services/user.service";
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })
-export class EditUserComponent implements OnInit {
+export class EditUserComponent implements OnInit, OnDestroy {
 
   sub: Subscription;
+  sub2: Subscription;
   user: Users;
   // name : string;
   id: number = 0;
-  myString: string = 'beautiful default string';
+  myString: string = 'this default string Should be overwritten';
 
-  constructor(private us: UserService) { }
+  constructor(public us: UserService) { }
 
   ngOnInit(): void {
 
     this.getUser();
-    
-    
   }
 
 
@@ -31,7 +30,7 @@ export class EditUserComponent implements OnInit {
     
     //this.us.selectedUser.subscribe(data => this.id = data);
     
-    this.us.selectedUser.subscribe(num => {
+    this.sub = this.us.selectedUser.subscribe(num => {
       console.log("this is num: " + num);
       this.id = num;
       this.myString = "look how this string also does not update while in this .subscribe method...";
@@ -46,12 +45,15 @@ export class EditUserComponent implements OnInit {
     console.log("this.id in edit: " + this.id);
     console.log("this.myString in edit: " + this.myString);
 
-    this.sub = this.us.getUser(this.id).subscribe(user => {
+    this.sub2 = this.us.getUser(this.id).subscribe(user => {
       this.user = user;
     });
   }
 
-  
+  ngOnDestroy() {
+    //this.sub.unsubscribe();
+    //this.sub2.unsubscribe();
+  }
 
 
 }

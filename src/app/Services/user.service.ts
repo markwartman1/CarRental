@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Users } from "../Models/Users";
 import { HttpClient } from "@angular/common/http";
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { Observable, Subject } from 'rxjs';
 export class UserService {
 
   // selectedUser = new Subject<Users>();
-  selectedUser: Subject<number> = new Subject<number>();
+  public selectedUser: BehaviorSubject<number> = new BehaviorSubject<number>(-99);
   users : Users[]; 
 
   constructor(
@@ -26,7 +26,7 @@ export class UserService {
     this.selectedUser.next(userId);
   }
 
-  getSelectUser(): Observable<number> {
+  getSelectUser(): Observable<number> {     // Not using this at the moment
     return this.selectedUser.asObservable();
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MessageService } from '../service/message.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   message: string = "default";
   subscription: Subscription;
 
-  constructor(public messageService: MessageService) { }
+  constructor(public messageService: MessageService, private router: Router) { }
   
   ngOnInit(): void {
     
@@ -21,5 +22,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  navToMessage() {
+    this.router.navigate(['message']);
   }
 }

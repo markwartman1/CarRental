@@ -15,8 +15,9 @@ export class UserRosterComponent implements OnInit, OnDestroy {
   users: Users[];
 
   constructor( 
-    private us : UserService,
-    private router: Router) { }
+    public us : UserService,
+    private router: Router) 
+  { }
 
   ngOnInit(): void {
 
@@ -33,7 +34,7 @@ export class UserRosterComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    //this.sub.unsubscribe();
+    this.sub.unsubscribe();
   }
 
 }
