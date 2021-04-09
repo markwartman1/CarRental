@@ -9,7 +9,8 @@ import { Observable, Subject } from 'rxjs';
 export class UserService {
 
   // selectedUser = new Subject<Users>();
-  selectedUser = new Subject<number>();
+  selectedUser: Subject<number> = new Subject<number>();
+  users : Users[]; 
 
   constructor(
     private http: HttpClient
@@ -21,15 +22,16 @@ export class UserService {
     return this.http.get<Users[]>(this.usersUrl);
   }
 
-  setUser(userId : number) {
-    //console.log("user in service is: " + user.id);
-    //console.log("name in service is: " + user.name);
+  selectUser(userId: number) {
     this.selectedUser.next(userId);
-    //console.log("in service: this.selectedUser--> " + this.selectedUser);
   }
 
-  getUser() {
+  getSelectUser(): Observable<number> {
+    return this.selectedUser.asObservable();
+  }
+
+  getUser(userId : number): Observable<Users> {
     // return this.selectedUser.asObservable();
-    return this.selectedUser;
+    return this.http.get<Users>(`${this.usersUrl}/${userId}`);
   }
 }

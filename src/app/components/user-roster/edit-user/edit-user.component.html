@@ -7,11 +7,11 @@
     <p >{{user.name}} {{user.id}}</p>
 </div> -->
 
-<div >
-    <p>Id should be seen below ??</p>
-    <p >{{ id }}</p>
+<div *ngIf="user">
+    <p>User info should be seen below ??</p>
+    <p >{{ user.id }} {{ user.name }}</p>
 </div>
 
-<input [(ngModel)]="id" >
+<!-- <input [(ngModel)]="id" >
 <br>
-<input [value]="id" >
+<input [value]="id" > -->
