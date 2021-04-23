@@ -8,6 +8,8 @@ import { Registration2Component } from './components/lobby/registration2/registr
 import { GriderTempletFormComponent } from './components/lobby/grider-templet-form/grider-templet-form.component';
 import { UserRosterComponent } from './components/user-roster/user-roster.component';
 import { EditUserComponent } from './components/user-roster/edit-user/edit-user.component';
+import { UserRoster2Component } from './components/user-roster2/user-roster2.component';
+import { EditUser2Component } from './components/user-roster2/edit-user2/edit-user2.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path: 'lobby/registration2', component: Registration2Component },
   { path: 'griderTemplateForm', component: GriderTempletFormComponent },
   { path: 'users', component: UserRosterComponent },
-  { path: 'users/edit-user', component: EditUserComponent }
+  { path: 'users/edit-user', component: EditUserComponent },
+  { path: 'users2', component: UserRoster2Component },
+  { path: 'users2/edit-user2', component: EditUser2Component }
 ];
 
 @NgModule({
