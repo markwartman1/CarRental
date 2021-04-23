@@ -1,1 +1,9 @@
 <p>edit-user2 works!</p>
+
+<p>
+    {{user.id}} - {{ user.name }}
+</p>
+
+<p>This is using RxJS-BehaviorSubject, not passin an id as a URL parameter or fetching from database as that is necessary with passing the id as a parameter to navigate</p>
+
+<p>This way, the app does not hit the database just to navigate, the app is more responsive because of it, and could work off-line perhaps</p>

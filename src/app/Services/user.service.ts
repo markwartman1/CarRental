@@ -8,8 +8,8 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 })
 export class UserService {
 
-  // selectedUser = new Subject<Users>();
   public selectedUser: BehaviorSubject<number> = new BehaviorSubject<number>(-99);
+  selectedUserObject = new BehaviorSubject<Users>(null);
   users : Users[]; 
 
   constructor(
@@ -33,5 +33,10 @@ export class UserService {
   getUser(userId : number): Observable<Users> {
     // return this.selectedUser.asObservable();
     return this.http.get<Users>(`${this.usersUrl}/${userId}`);
+  }
+
+  // selectedUserObject
+  setSelectedUserObject(user: Users) {
+    this.selectedUserObject.next(user);
   }
 }
