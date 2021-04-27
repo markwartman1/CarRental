@@ -7,3 +7,16 @@
 <p>This is using RxJS-BehaviorSubject, not passin an id as a URL parameter or fetching from database as that is necessary with passing the id as a parameter to navigate</p>
 
 <p>This way, the app does not hit the database just to navigate, the app is more responsive because of it, and could work off-line perhaps</p>
+
+<div class="card" style="width: 320px;">
+    <div class="card-header">Header</div>
+    <form [formGroup]="editUserForm" (ngSubmit)="onEdit()" class="card-body">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                type="text" 
+                formControlName="username" 
+                class="form-control">
+        </div>
+    </form>
+</div>

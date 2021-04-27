@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Users } from "../Models/Users";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,11 @@ export class UserService {
   public selectedUser: BehaviorSubject<number> = new BehaviorSubject<number>(-99);
   selectedUserObject = new BehaviorSubject<Users>(null);
   users : Users[]; 
+
+  // DOES NOT SEEM TO BE NEEDED
+  // httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  // };
 
   constructor(
     private http: HttpClient
@@ -38,5 +43,9 @@ export class UserService {
   // selectedUserObject
   setSelectedUserObject(user: Users) {
     this.selectedUserObject.next(user);
+  }
+
+  updateUser(user: Users) {
+    return this.http.put(`${this.usersUrl}`, user);
   }
 }
