@@ -1,5 +1,7 @@
 <p>message-iterate works!</p>
 <button (click)="messageService.clearAll()">Clear All</button>
-<div *ngFor="let message of messageService.messages">
-    {{message}}
+<div *ngFor="let message of messageService.messages; let i = index;">
+    <div class="mb-1">
+        <span class="mr-2">{{message}}</span><button (click)="messageService.clearSingle(i)">x</button>
+    </div>
 </div>

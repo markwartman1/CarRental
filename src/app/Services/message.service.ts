@@ -16,4 +16,8 @@ export class MessageService {
   clearAll() {
     this.messages = [];
   }
+
+  clearSingle(index: number) {
+    this.messages = this.messages.filter((val, i ) => i != index);
+  }
 }
