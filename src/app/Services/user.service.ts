@@ -3,6 +3,7 @@ import { Users } from "../Models/Users";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from "rxjs/operators";
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,15 @@ export class UserService {
   };
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private ms: MessageService
   ) { }
 
   private usersUrl: string = 'api/users';
+
+  private log(message: string) {
+    this.ms.add("User Service: " + message);
+  }
 
   getUsers(): Observable<Users[]> {
     return this.http.get<Users[]>(this.usersUrl);
@@ -58,7 +64,7 @@ export class UserService {
      */
     return this.http.put(`${this.usersUrl}`, user, this.httpOptions)
     .pipe(
-      tap(x => console.log("hey, service ran: " + JSON.stringify(x))),
+      tap(x => this.log("Updated: " + user.id)),
       catchError(x => {throw "here is my thrown err: " + JSON.stringify(x)})
       );
   }

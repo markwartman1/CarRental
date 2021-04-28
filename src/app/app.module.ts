@@ -19,6 +19,7 @@ import { UserRosterComponent } from './components/user-roster/user-roster.compon
 import { EditUserComponent } from './components/user-roster/edit-user/edit-user.component';
 import { UserRoster2Component } from './components/user-roster2/user-roster2.component';
 import { EditUser2Component } from './components/user-roster2/edit-user2/edit-user2.component';
+import { MessageIterateComponent } from './components/message-iterate/message-iterate.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditUser2Component } from './components/user-roster2/edit-user2/edit-us
     UserRosterComponent,
     EditUserComponent,
     UserRoster2Component,
-    EditUser2Component
+    EditUser2Component,
+    MessageIterateComponent
   ],
   imports: [
     BrowserModule,
