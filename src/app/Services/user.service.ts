@@ -2,6 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Users } from "../Models/Users";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { catchError, tap } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,9 @@ export class UserService {
   users : Users[]; 
 
   // DOES NOT SEEM TO BE NEEDED
-  // httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  // };
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(
     private http: HttpClient
@@ -45,7 +46,20 @@ export class UserService {
     this.selectedUserObject.next(user);
   }
 
-  updateUser(user: Users) {
-    return this.http.put(`${this.usersUrl}`, user);
+  updateUser(user: Users): Observable<any> {
+    // to purposely throw error, use below
+    //user.id = null;
+
+    /**
+     * Interesting, if success, the object in console statement
+     * is null, the dom access correct object though??
+     * 
+     * But, if error, consoled obj is stringified properly.
+     */
+    return this.http.put(`${this.usersUrl}`, user, this.httpOptions)
+    .pipe(
+      tap(x => console.log("hey, service ran: " + JSON.stringify(x))),
+      catchError(x => {throw "here is my thrown err: " + JSON.stringify(x)})
+      );
   }
 }
