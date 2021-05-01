@@ -64,7 +64,7 @@ export class UserService {
      */
     return this.http.put(`${this.usersUrl}`, user, this.httpOptions)
     .pipe(
-      tap(x => this.log("Updated: " + user.id)),
+      tap(x => this.log(`Updated: ${user.id} ${user.name}`)),
       catchError(x => {throw "here is my thrown err: " + JSON.stringify(x)})
       );
   }
