@@ -10,19 +10,27 @@ import { UserRosterComponent } from './components/user-roster/user-roster.compon
 import { EditUserComponent } from './components/user-roster/edit-user/edit-user.component';
 import { UserRoster2Component } from './components/user-roster2/user-roster2.component';
 import { EditUser2Component } from './components/user-roster2/edit-user2/edit-user2.component';
+import { LoginComponent } from './components/login/login.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
+import { AuthGuardService } from './Services/Guards/auth-guard.service';
+
+// { path: '', component: AppComponent, pathMatch: 'full' },
 
 const routes: Routes = [
-  { path: 'lobby', component: LobbyComponent },
-  { path: 'carLot', component: CarLotComponent },
-  { path: 'lobby/registration', component: RegistrationComponent },
-  { path: 'rental', component: RentalComponent },
-  { path: 'lobby/registration2', component: Registration2Component },
-  { path: 'griderTemplateForm', component: GriderTempletFormComponent },
-  { path: 'users', component: UserRosterComponent },
-  { path: 'users/edit-user', component: EditUserComponent },
-  { path: 'users2', component: UserRoster2Component },
-  { path: 'users2/edit-user2', component: EditUser2Component }
+  { path: '', component: LoginComponent },
+  { path: 'welcome', component: WelcomeComponent, canActivate:[AuthGuardService] },
+  { path: 'lobby', component: LobbyComponent, canActivate:[AuthGuardService] },
+  { path: 'carLot', component: CarLotComponent, canActivate:[AuthGuardService] },
+  { path: 'lobby/registration', component: RegistrationComponent, canActivate:[AuthGuardService] },
+  { path: 'rental', component: RentalComponent, canActivate:[AuthGuardService] },
+  { path: 'lobby/registration2', component: Registration2Component, canActivate:[AuthGuardService] },
+  { path: 'griderTemplateForm', component: GriderTempletFormComponent, canActivate:[AuthGuardService] },
+  { path: 'users', component: UserRosterComponent, canActivate:[AuthGuardService] },
+  { path: 'users/edit-user', component: EditUserComponent, canActivate:[AuthGuardService] },
+  { path: 'users2', component: UserRoster2Component, canActivate:[AuthGuardService] },
+  { path: 'users2/edit-user2', component: EditUser2Component, canActivate:[AuthGuardService] },
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({
