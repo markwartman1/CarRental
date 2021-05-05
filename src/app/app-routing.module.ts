@@ -14,11 +14,13 @@ import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
 import { AuthGuardService } from './Services/Guards/auth-guard.service';
+import { AppComponent } from './app.component';
 
 // { path: '', component: AppComponent, pathMatch: 'full' },
+// { path: '', component: LoginComponent },
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: AppComponent, canActivate:[AuthGuardService] },
   { path: 'welcome', component: WelcomeComponent, canActivate:[AuthGuardService] },
   { path: 'lobby', component: LobbyComponent, canActivate:[AuthGuardService] },
   { path: 'carLot', component: CarLotComponent, canActivate:[AuthGuardService] },
@@ -30,7 +32,7 @@ const routes: Routes = [
   { path: 'users/edit-user', component: EditUserComponent, canActivate:[AuthGuardService] },
   { path: 'users2', component: UserRoster2Component, canActivate:[AuthGuardService] },
   { path: 'users2/edit-user2', component: EditUser2Component, canActivate:[AuthGuardService] },
-  { path: '**', component: LoginComponent }
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
