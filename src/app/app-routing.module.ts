@@ -20,7 +20,8 @@ import { AppComponent } from './app.component';
 // { path: '', component: LoginComponent },
 
 const routes: Routes = [
-  { path: '', component: AppComponent, canActivate:[AuthGuardService] },
+  
+  { path: '', component: LoginComponent, pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent, canActivate:[AuthGuardService] },
   { path: 'lobby', component: LobbyComponent, canActivate:[AuthGuardService] },
   { path: 'carLot', component: CarLotComponent, canActivate:[AuthGuardService] },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'users/edit-user', component: EditUserComponent, canActivate:[AuthGuardService] },
   { path: 'users2', component: UserRoster2Component, canActivate:[AuthGuardService] },
   { path: 'users2/edit-user2', component: EditUser2Component, canActivate:[AuthGuardService] },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: LoginComponent },
 ];
 
 @NgModule({
