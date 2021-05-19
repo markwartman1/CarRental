@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 
 // { path: '', component: AppComponent, pathMatch: 'full' },
 // { path: '', component: LoginComponent },
+// { path: '**', component: LoginComponent },
 
 const routes: Routes = [
   
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'users2', component: UserRoster2Component, canActivate:[AuthGuardService] },
   { path: 'users2/edit-user2', component: EditUser2Component, canActivate:[AuthGuardService] },
   { path: 'login', component: LoginComponent },
-  { path: '**', component: LoginComponent },
+  
 ];
 
 @NgModule({
