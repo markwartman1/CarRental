@@ -15,6 +15,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 
 import { AuthGuardService } from './Services/Guards/auth-guard.service';
 import { AppComponent } from './app.component';
+import { LinksComponent } from './components/links/links.component';
 
 // { path: '', component: AppComponent, pathMatch: 'full' },
 // { path: '', component: LoginComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'users/edit-user', component: EditUserComponent, canActivate:[AuthGuardService] },
   { path: 'users2', component: UserRoster2Component, canActivate:[AuthGuardService] },
   { path: 'users2/edit-user2', component: EditUser2Component, canActivate:[AuthGuardService] },
+  { path: 'links', component: LinksComponent, canActivate:[AuthGuardService] },
   { path: 'login', component: LoginComponent },
   
 ];

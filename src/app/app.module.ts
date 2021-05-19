@@ -22,6 +22,7 @@ import { EditUser2Component } from './components/user-roster2/edit-user2/edit-us
 import { MessageIterateComponent } from './components/message-iterate/message-iterate.component';
 import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { LinksComponent } from './components/links/links.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     EditUser2Component,
     MessageIterateComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LinksComponent
   ],
   imports: [
     BrowserModule,
