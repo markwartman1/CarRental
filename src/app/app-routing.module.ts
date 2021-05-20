@@ -37,6 +37,7 @@ const routes: Routes = [
   { path: 'users2/edit-user2', component: EditUser2Component, canActivate:[AuthGuardService] },
   { path: 'links', component: LinksComponent, canActivate:[AuthGuardService] },
   { path: 'garage', loadChildren: () => import('./garage/garage.module').then(m => m.GarageModule), canActivate:[AuthGuardService] },
+  { path: 'git', loadChildren: () => import('./git/git.module').then(m => m.GitModule), canActivate:[AuthGuardService] },
   { path: 'login', component: LoginComponent },
   
 ];
