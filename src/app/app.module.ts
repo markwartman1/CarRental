@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
-import { GarageModule } from "./garage/garage.module";
 
 import { InMemoryDataService } from './Services/in-memory-data.service';
 
@@ -54,8 +53,7 @@ import { LinksComponent } from './components/links/links.component';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     ReactiveFormsModule,
-    FormsModule,
-    GarageModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@ import { MessageComponent } from './message/message.component';
 
 
 const routes: Routes = [
-  { path: 'garage', component: HomeComponent, canActivate:[AuthGuardService] },
+  { path: '', component: HomeComponent, canActivate:[AuthGuardService] },
   { path: 'message', component: MessageComponent, canActivate:[AuthGuardService] },
 ];
 
