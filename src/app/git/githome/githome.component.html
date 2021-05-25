@@ -2,14 +2,29 @@
 
 <button (click)="onBtn()">Hey...</button>
 
-<div *ngIf="gitUsers">
+<!-- <p>{{user.login}} - {{user.id}} - {{user.avatar_url}}</p> -->
+
+<!-- BOOTSTRAP VESION BELOW -->
+<!-- <div *ngIf="gitUsers">
 
     <div class="row card-group">
 
         <div *ngFor="let user of gitUsers">
             
             <app-gitcard class="col card my-4" style="width: 150px;" [id]="user.id" [username]="user.login" [url]="user.avatar_url"></app-gitcard>
-            <!-- <p>{{user.login}} - {{user.id}} - {{user.avatar_url}}</p> -->
+        </div>
+    </div>
+</div> -->
+
+<!-- ANGULAR MATERIAL VERSION BELOW -->
+<div *ngIf="gitUsers">
+
+    <div class="">
+
+        <div *ngFor="let user of gitUsers">
+            <mat-card>
+                <app-gitcard class="" style="" [id]="user.id" [username]="user.login" [url]="user.avatar_url"></app-gitcard>
+            </mat-card>
         </div>
     </div>
 </div>

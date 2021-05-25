@@ -1,7 +1,10 @@
 <!-- <p>gitcard works!</p> -->
 
    
-        <div class="card-header">{{username}}</div>
-        <div class="card-body"><img [src]=url alt="" style="height: 60px;"></div>
-        <div class="card-footer">{{id}}</div>
+        <mat-card-header>
+                <mat-card-title>{{username}}</mat-card-title>
+                <mat-card-subtitle>{{id}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]=url alt="" >
+        <mat-card-actions>{{id}}</mat-card-actions>
     

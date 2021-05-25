@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from "./material/material.module";
 
 import { InMemoryDataService } from './Services/in-memory-data.service';
 
@@ -22,7 +24,6 @@ import { MessageIterateComponent } from './components/message-iterate/message-it
 import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LinksComponent } from './components/links/links.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ),
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
