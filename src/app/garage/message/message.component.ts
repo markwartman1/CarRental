@@ -17,7 +17,7 @@ export class MessageComponent implements OnInit {
   setMessage(event) {
     console.log(event.value);
     this.messageService.setMessage(event.value);
-    this.router.navigate(['garage']);
+    this.router.navigate(['/garage']);
   }
 
 }

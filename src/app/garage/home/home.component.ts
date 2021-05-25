@@ -10,21 +10,21 @@ import { Router } from "@angular/router";
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  message: string = "default";
-  subscription: Subscription;
+  // message: string = "default";
+  // subscription: Subscription;
 
   constructor(public messageService: MessageService, private router: Router) { }
   
   ngOnInit(): void {
     
-    this.subscription = this.messageService.message.subscribe(mess => this.message = mess);
+    // this.subscription = this.messageService.message.subscribe(mess => this.message = mess);
   }
   
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
-  navToMessage() {
-    this.router.navigate(['message']);
-  }
+  // navToMessage() {
+  //   this.router.navigate(['message']);
+  // }
 }

@@ -1,9 +1,13 @@
 <p>Garage-home works!</p>
 
-<div *ngIf="message">
+<!-- <div *ngIf="message">
     {{message}}
-  </div>
+  </div> -->
 
 <!-- <app-message></app-message> -->
 
-<button (click)="navToMessage()">Send a message back to this component and print it just above this button</button>
+<!-- <button (click)="navToMessage()">Send a message back to this component and print it just above this button</button> -->
+
+<!-- <button routerLink="message">Send a message back to this component and print it just above this button</button> -->
+
+<router-outlet></router-outlet>

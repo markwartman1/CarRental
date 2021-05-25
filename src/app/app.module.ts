@@ -22,6 +22,7 @@ import { MessageIterateComponent } from './components/message-iterate/message-it
 import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LinksComponent } from './components/links/links.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { LinksComponent } from './components/links/links.component';
       InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
     ),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
