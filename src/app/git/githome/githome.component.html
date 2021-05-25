@@ -19,12 +19,14 @@
 <!-- ANGULAR MATERIAL VERSION BELOW -->
 <div *ngIf="gitUsers">
 
-    <div class="">
+    <mat-grid-list cols="3"  >
 
-        <div *ngFor="let user of gitUsers">
-            <mat-card>
-                <app-gitcard class="" style="" [id]="user.id" [username]="user.login" [url]="user.avatar_url"></app-gitcard>
-            </mat-card>
-        </div>
-    </div>
+        
+            <mat-grid-tile *ngFor="let user of gitUsers">
+                <mat-card>
+                    <app-gitcard class="" [id]="user.id" [username]="user.login" [url]="user.avatar_url"></app-gitcard>
+                </mat-card>
+            </mat-grid-tile>
+        
+    </mat-grid-list>
 </div>
