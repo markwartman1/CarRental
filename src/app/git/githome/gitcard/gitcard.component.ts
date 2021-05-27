@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GitusersService } from '../../GitService/gitusers.service';
 
 @Component({
   selector: 'app-gitcard',
@@ -11,9 +12,13 @@ export class GitcardComponent implements OnInit {
   @Input() username;
   @Input() url;
 
-  constructor() { }
+  constructor(private gs: GitusersService) { }
 
   ngOnInit(): void {
+  }
+
+  delete(id: number) {
+    this.gs.deleteUser(id)
   }
 
 }

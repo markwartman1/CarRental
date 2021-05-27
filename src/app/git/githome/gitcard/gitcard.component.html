@@ -5,6 +5,9 @@
                 <mat-card-title>{{username.slice(0,5)}}</mat-card-title>
                 <mat-card-subtitle>ID: {{id}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]=url alt="" style="height: 100px; width: 100px;">
-        <mat-card-actions>{{id}}</mat-card-actions>
+        <img mat-card-image [src]=url alt="Profile picture of user {{username}}" style="height: 100px; width: 100px;">
+        <mat-card-actions>
+                {{id}}
+                <button (click)="delete(id)">Delete</button>
+        </mat-card-actions>
     

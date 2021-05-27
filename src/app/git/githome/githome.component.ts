@@ -10,29 +10,22 @@ import { GitusersService } from '../GitService/gitusers.service';
 export class GithomeComponent implements OnInit {
 
   gitUsers: GitUsers[];
-  user: GitUsers;
+  //user: GitUsers;
 
   constructor(private gus: GitusersService) { }
 
   ngOnInit(): void {
 
-    
+    this.gus.getListGitUsers().subscribe(res => {
+      //this.gus.gitUsers.next(res);  ... ... ... getting Maximum call stack size exceeded ???
+      this.gitUsers = res;
+    });
   }
 
   onBtn() {
-    this.gus.getListGitUsers().subscribe(res => {
-      //console.log('hey this ran...');
-      //console.log(res);
-      //console.log(JSON.stringify(res));
-      this.gitUsers = res;
-      
-      // res.forEach(u => {
-      //   this.user.login = u.login;
-      //   this.user.id = u.id;
-      //   this.user.avatar_url = u.avatar_url;
-      //   this.gitUsers.push(this.user);
-      // });
-    });
+    // this.gus.getListGitUsers().subscribe(res => {
+    //   this.gitUsers = res;
+    // });
   }
 
 }
