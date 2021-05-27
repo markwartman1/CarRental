@@ -39,6 +39,7 @@ const routes: Routes = [
   { path: 'links', component: LinksComponent },
   { path: 'garage', loadChildren: () => import('./garage/garage.module').then(m => m.GarageModule) },
   { path: 'git', loadChildren: () => import('./git/git.module').then(m => m.GitModule) },
+  { path: 'password', loadChildren: () => import('./password/password.module').then(m => m.PasswordModule) },
   { path: 'login', component: LoginComponent },
   
 ];
