@@ -2,29 +2,38 @@
 
 <h3>Password Generator</h3>
 
-<div class="">
-    <label for="length">Password Character Length</label>
-    <input type="number" (input)="inputLength($event.target.value)">
-</div>
+<style>
+    .ml {
+        margin-left: 8px;
+    }
+</style>
 
-<div class="">
-    <label for="case">Use Letters</label>
-    <input type="checkbox" (change)="doLetters()">
-</div>
+<mat-card style="background-color: antiquewhite; color: black;">
 
-<div class="">
-    <label for="num">Use Numbers</label>
-    <input type="checkbox" (change)="doNum()">
-</div>
-
-<div class="">
-    <label for="sym">Use Symbols</label>
-    <input type="checkbox" (change)="doSym()">
-</div>
-
-<div><button class="btn btn-primary" (click)="generate()">Generate Password</button></div>
-
-<div class="">
-    <label for="pass">Here is your password</label>
-    <input type="text" [value]="password">
-</div>
+    <div class="">
+        <label for="length">Password Character Length</label>
+        <input class="ml" type="number" (input)="inputLength($event.target.value)">
+    </div>
+    
+    <div class="">
+        <input type="checkbox" (change)="doLetters()">
+        <label class="ml" for="case">Use Letters</label>
+    </div>
+    
+    <div class="">
+        <input type="checkbox" (change)="doNum()">
+        <label class="ml" for="num">Use Numbers</label>
+    </div>
+    
+    <div class="">
+        <input type="checkbox" (change)="doSym()">
+        <label class="ml" for="sym">Use Symbols</label>
+    </div>
+    
+    <div><button class="btn btn-primary" (click)="generate()">Generate Password</button></div>
+    
+    <div class="">
+        <label for="pass">Here is your password</label>
+        <input class="ml" type="text" [value]="password">
+    </div>
+</mat-card>
