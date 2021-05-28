@@ -35,5 +35,6 @@
     <div class="">
         <label for="pass">Here is your password</label>
         <input class="ml" type="text" [value]="password">
+        <button [cdkCopyToClipboard]="password"><-- copy</button>
     </div>
 </mat-card>
