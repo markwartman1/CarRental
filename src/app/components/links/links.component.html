@@ -1,13 +1,23 @@
 <p>links works!</p>
 
-<button class="btn" routerLink="/garage">Gargage</button>
+<div class="row">
+    <div class="col">
+        <button class="btn" routerLink="/garage">Gargage</button>
+        
+        <div class="my-3">
+            <button class="btn my-3" routerLink="/git">GitHub API</button>
+        </div>
+        
+        <div class="my-3">
+            <button class="btn" routerLink="/password">Password Generator</button>
+        </div>
 
-<div class="my-3">
-    <button class="btn my-3" routerLink="/git">GitHub API</button>
-</div>
-
-<div class="my-3">
-    <button class="btn" routerLink="/password">Password Generator</button>
+        <div class="my-3">{{ messageHere }}</div>
+    </div>
+    <div class="col">
+        <p>hi from other col :)</p>
+        <app-linkchildnested (message)="parentMethod($event)"></app-linkchildnested>
+    </div>
 </div>
 
     

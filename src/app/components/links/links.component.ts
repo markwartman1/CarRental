@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-links',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinksComponent implements OnInit {
 
+  messageHere: string;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  parentMethod(str: string) {
+    this.messageHere = str;
+  }
 }
